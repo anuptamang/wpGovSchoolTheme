@@ -1,0 +1,447 @@
+.news-bar-wrapper {
+  position: relative;
+
+  @include media('>=tablet') {
+    height: 55px;
+  }
+
+  .search-hold-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  .search-holder {
+    width: 60px;
+  }
+
+  .search-opener {
+    padding: 17px 15px;
+  }
+}
+
+.news-bar {
+  overflow: hidden;
+  background: linear-gradient(270deg, $fade-blue, darken($fade-blue, 20));
+  background-size: 400% 400%;
+  -webkit-animation: bgGrad 2s linear infinite;
+  -moz-animation: bgGrad 2s linear infinite;
+  animation: bgGrad 2s linear infinite;
+
+  @include media('>=tablet') {
+    height: 55px;
+  }
+
+  .title {
+    padding: 5px 0;
+    position: relative;
+    background: $blue;
+    z-index: 1;
+    text-align: center;
+    font-weight: 700;
+
+    @include media('>=tablet') {
+      padding: 15px 0;
+      margin-right: 50px;
+      width: 140px;
+      text-align: right;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -9999px;
+      right: 0;
+      background: $blue-2;
+      z-index: -1;
+
+      @include media('<tablet') {
+        right: -999px;
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: -15px;
+      top: -22px;
+      width: 100px;
+      height: 100px;
+      background: $blue-2;
+      transform: rotate(45deg);
+      z-index: -1;
+
+      @include media('<tablet') {
+        display: none;
+      }
+    }
+
+    .icon-bullhorn {
+      vertical-align: top;
+      position: relative;
+      font-size: 22px;
+
+      span {
+        position: relative;
+      }
+
+      span:before,
+      span:after,
+      &:after {
+        content: '';
+        position: absolute;
+        left: 100%;
+        margin: 0 0 0 3px;
+        top: 0;
+        width: 6px;
+        height: 2px;
+        border-radius: 2px;
+        background: $white;
+        transform: rotate(-20deg);
+        opacity: 0;
+        animation: bullHorn 1s linear infinite forwards;
+        //@include animate(opacity);
+      }
+
+      span:after {
+        top: 9px;
+        transform: rotate(0);
+      }
+
+      &:after {
+        top: 18px;
+        transform: rotate(20deg);
+      }
+    }
+  }
+
+  .news-title {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    font-weight: 700;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+@-webkit-keyframes bullHorn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes bgGrad {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 51%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes bgGrad {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 51%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-o-keyframes bgGrad {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 51%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes bgGrad {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 51%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.news-bar-slider {
+  position: relative;
+  z-index: 1;
+  height: 55px;
+  overflow: hidden;
+  padding: 0 20px 0 0;
+
+  @include media('>=tablet') {
+    width: calc(100% - 220px);
+    padding: 0 115px 0 0;
+    overflow: visible;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -9999px;
+    left: 100%;
+    background: $blue-2;
+    z-index: -1;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: -15px;
+    top: -22px;
+    width: 100px;
+    height: 100px;
+    background: $blue-2;
+    transform: rotate(45deg);
+
+    @include media('<tablet') {
+      display: none;
+    }
+  }
+
+  .slide {
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slick-prev,
+  .slick-next {
+    right: 0;
+    color: $blue;
+
+    @include media('>=tablet') {
+      right: 40px;
+      color: $white;
+    }
+
+    @include media('<tablet') {
+      display: none;
+    }
+  }
+
+  .slick-next {
+  }
+}
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  right: 40px;
+  top: 0;
+  z-index: 10;
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  color: $white;
+  font-size: 20px;
+  line-height: 1;
+  outline: none;
+  margin: 6px 0;
+  @include animate(top bottom);
+
+  &:hover {
+    //opacity: 0.7;
+    top: -4px;
+  }
+}
+
+.slick-next {
+  bottom: 0;
+  top: auto;
+
+  &:hover {
+    top: auto;
+    bottom: -4px;
+  }
+}
+
+.hero-slider {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+
+  @include media('>=tablet') {
+    height: 550px;
+  }
+
+  @include media('>=desktop') {
+    height: 650px;
+  }
+
+  .slide {
+    height: 420px;
+
+    @include media('>=tablet') {
+      height: 550px;
+    }
+
+    @include media('>=desktop') {
+      height: 650px;
+    }
+  }
+
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+
+  .caption {
+    text-align: center;
+    max-width: 350px;
+    margin: 0 auto;
+
+    @include media('>=desktop') {
+      max-width: 650px;
+    }
+
+    br {
+      @include media('<tablet') {
+        display: none;
+      }
+    }
+  }
+}
+
+.members-row {
+  >.row {
+    >div {
+      + div {
+        margin-top: 30px;
+
+        @include media('>=tablet') {
+          margin-top: 0;
+        }
+
+        @include media('>=desktop') {
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+}
+
+.member-block {
+
+  @include media('>=desktop') {
+    display: flex;
+    align-items: center;
+  }
+
+  .img-holder {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    border-radius: 20%;
+    background-color: $white;
+    border: 3px solid $blue;
+    position: relative;
+    align-self: flex-start;
+
+    @include media('>=desktop') {
+      margin: 0;
+    }
+
+    @include media('>=widescreen') {
+      width: 130px;
+      height: 130px;
+    }
+  }
+
+  .description {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+
+    @include media('>=desktop') {
+      width: calc(100% - 130px);
+      padding-left: 20px;
+      text-align: left;
+    }
+  }
+}
+
+.about-summary {
+  .btn-holder {
+    @include media('>=desktop') {
+      position: absolute;
+      right: 30px;
+      bottom: 30px;
+    }
+  }
+}
+
+.font-sm {
+  font-size: 12px;
+  line-height: 1;
+
+  @include media('>=widescreen') {
+    font-size: 13px;
+  }
+}
+
+.link {
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.block-heading {
+  position: relative;
+
+  .link {
+    position: absolute;
+    right: 20px;
+    top: 28px;
+  }
+}
+
+.team-summary {
+
+}
+
+.info-box {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 6px 3px rgba($black, 0.15);
+}
