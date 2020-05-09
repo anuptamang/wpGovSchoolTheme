@@ -1,4 +1,4 @@
-/*
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");/*
 Theme Name: Government School
 Author: Anonymous
 Author URI:
@@ -385,7 +385,7 @@ h6,
 .h {
 	font-family: inherit;
 	font-weight: 700;
-	line-height: 1.18;
+	line-height: 1.5;
 	margin: 0 0 .5em;
 	color: #000;
 	display: block;
@@ -469,7 +469,7 @@ a:hover {
 
 @font-face {
 	font-family: "icomoon";
-	src: url("fonts/icomoon.ttf?igkxzc") format("truetype"), url("fonts/icomoon.woff?igkxzc") format("woff"), url("fonts/icomoon.svg?igkxzc#icomoon") format("svg");
+	src: url("fonts/icomoon.ttf?bvrirs") format("truetype"), url("fonts/icomoon.woff?bvrirs") format("woff"), url("fonts/icomoon.svg?bvrirs#icomoon") format("svg");
 	font-weight: normal;
 	font-style: normal;
 	font-display: block;
@@ -487,6 +487,14 @@ a:hover {
 	line-height: 1; /* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-external-link:before {
+	content: "";
+}
+
+.icon-add_comment:before {
+	content: "";
 }
 
 .icon-multiple-users-silhouette:before {
@@ -513,12 +521,40 @@ a:hover {
 	content: "";
 }
 
+.icon-images:before {
+	content: "";
+}
+
+.icon-film3:before {
+	content: "";
+}
+
 .icon-bullhorn:before {
 	content: "";
 }
 
+.icon-connection:before {
+	content: "";
+}
+
+.icon-books:before {
+	content: "";
+}
+
 .icon-phone4:before {
 	content: "";
+}
+
+.icon-bubbles4:before {
+	content: "";
+}
+
+.icon-wrench:before {
+	content: "";
+}
+
+.icon-stats-dots:before {
+	content: "";
 }
 
 .icon-arrow-up:before {
@@ -535,6 +571,18 @@ a:hover {
 
 .icon-youtube2:before {
 	content: "";
+}
+
+.icon-IE:before {
+	content: "";
+}
+
+.icon-paper-plane:before {
+	content: "";
+}
+
+.icon-send:before {
+	content: "";
 }
 
 .icon-home:before {
@@ -587,10 +635,6 @@ a:hover {
 
 .icon-magnifier:before {
 	content: "";
-}
-
-.icon-add_comment:before {
-	content: "";
 }
 
 /* Slick slider styles */
@@ -745,6 +789,10 @@ button {
 	background-size: cover;
 }
 
+.has-parallax {
+	background-attachment: fixed;
+}
+
 .has-overlay {
 	position: relative;
 	z-index: 1;
@@ -828,6 +876,14 @@ button[type="submit"]:after,
 	vertical-align: top;
 	margin-left: 7px;
 	font-weight: normal;
+}
+
+.list-nav-pane input[type="submit"]:after,
+.list-nav-pane
+    button[type="submit"]:after,
+.list-nav-pane
+    .btn:after {
+	display: none;
 }
 
 input[type="submit"]:hover,
@@ -1005,7 +1061,7 @@ address {
 	display: block;
 	min-width: 100px;
 	background: #fff;
-	color: #313131;
+	color: #0169a6;
 	max-width: 250px;
 	margin: 0 auto;
 	width: 100%;
@@ -1017,6 +1073,11 @@ address {
 	opacity: .8;
 }
 
+.wpcf7 label {
+	margin: 0;
+	display: block;
+}
+
 .wpcf7 input[type="text"],
 .wpcf7 input[type="email"],
 .wpcf7 textarea {
@@ -1024,6 +1085,10 @@ address {
 	background: #d5e9fa;
 	color: #313131;
 	font-weight: 400;
+	font-size: 14px;
+	line-height: 18px;
+	height: 40px;
+	border-radius: 10px;
 }
 
 .wpcf7 input[type="text"]::-webkit-input-placeholder,
@@ -1058,9 +1123,10 @@ address {
 }
 
 .wpcf7 textarea {
-	height: 112px !important;
+	height: 150px !important;
 	resize: none;
-	margin-bottom: 40px;
+	margin-bottom: 0;
+	padding-top: 15px;
 }
 
 .wpcf7 br {
@@ -1094,17 +1160,22 @@ address {
 	font-size: 18px;
 }
 
-.header-holder {
+.sticky-header-wrapper {
 	position: relative;
+	box-shadow: 0 0 4px 2px rgba(0, 0, 0, .3);
 }
 
-.fixed-position .header-holder {
+.is-sticky .sticky-header-wrapper {
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	width: 100% !important;
 	z-index: 8888;
+}
+
+.header-holder {
+	position: relative;
 }
 
 .logo-holder {
@@ -1399,6 +1470,11 @@ address {
 	color: #fff;
 }
 
+.search-form input[type="submit"]:after,
+.search-form button[type="submit"]:after {
+	display: none;
+}
+
 .search-form fieldset {
 	border: 0;
 	width: 100%;
@@ -1452,6 +1528,7 @@ address {
 	z-index: 1;
 	text-align: center;
 	font-weight: 700;
+	font-size: 14px;
 }
 
 .news-bar .title:before {
@@ -1530,6 +1607,7 @@ address {
 	text-overflow: ellipsis;
 	text-align: center;
 	font-weight: 700;
+	font-size: 14px;
 }
 
 .news-bar .news-title:hover {
@@ -1701,6 +1779,119 @@ address {
 	box-shadow: 0 0 6px 3px rgba(0, 0, 0, .15);
 }
 
+.list-news li + li {
+	border-top: 1px solid #deedf7;
+}
+
+.list-news .post-date {
+	width: 100px;
+	text-align: center;
+	font-weight: 700;
+	white-space: nowrap;
+}
+
+.list-news .post-date .day {
+	padding: 5px;
+	font-size: 22px;
+	line-height: 1.2;
+}
+
+.list-news .post-date .date {
+	background: #d9534f;
+	color: #fff;
+	padding: 5px;
+	font-size: 12px;
+	line-height: 1.2;
+}
+
+.list-news .post-title {
+	width: calc(100% - 100px);
+	padding: 15px 30px 15px 15px;
+	background: #01598d;
+	color: #fff;
+}
+
+.list-news .post-title:hover {
+	background: #8cc0e3;
+	color: #0169a6;
+}
+
+.list-news .post-title .text-title {
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	color: inherit;
+}
+
+#footer address {
+	font-size: 14px;
+	line-height: 2;
+}
+
+#footer .img-logo {
+	width: 150px;
+	height: 150px;
+}
+
+.copyright {
+	font-size: 14px;
+	line-height: 1;
+}
+
+.site-developer {
+	font-size: 12px;
+	line-height: 1.3;
+	letter-spacing: .3px;
+}
+
+.site-developer .img {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 5px;
+}
+
+.site-developer .img img {
+	display: block;
+}
+
+.site-developer a {
+	font-family: "Audiowide", cursive;
+	font-weight: 400;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	font-size: 12px;
+	line-height: 1;
+	text-transform: uppercase;
+	letter-spacing: 0;
+}
+
+.nav-footer {
+	font-size: 14px;
+	line-height: 1.3;
+}
+
+.nav-footer > li {
+	position: relative;
+	padding: 0 0 0 20px;
+	margin-bottom: 10px;
+}
+
+.nav-footer > li:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	font-family: "icomoon";
+	color: #fff;
+}
+
 @media (min-width: 768px) {
 	.commentlist-item .commentlist-item {
 		padding: 0 0 0 2em;
@@ -1711,8 +1902,8 @@ address {
 	}
 
 	.logo-holder .img-logo {
-		width: 100px;
-		height: 100px;
+		width: 80px;
+		height: 80px;
 	}
 
 	.logo-holder .site-title {
@@ -1721,12 +1912,12 @@ address {
 	}
 
 	.logo-holder .site-title .title {
-		font-size: 26px;
+		font-size: 23px;
 		line-height: 1.3;
 	}
 
 	.logo-holder .site-title address {
-		font-size: 16px;
+		font-size: 15px;
 		line-height: 1.3;
 	}
 
@@ -1782,6 +1973,19 @@ address {
 
 	.members-row > .row > div + div {
 		margin-top: 0;
+	}
+
+	.list-news .post-date .day {
+		font-size: 26px;
+	}
+
+	.list-news .post-date .date {
+		font-size: 14px;
+	}
+
+	.site-developer .img {
+		width: 30px;
+		height: 30px;
 	}
 }
 
@@ -1897,13 +2101,9 @@ address {
 	#nav .navigation > li > a {
 		font-size: 13px;
 		color: #fff;
-		padding: 60px 8px;
+		padding: 40px 8px;
 		-webkit-transition: padding .3s ease-in-out, border .3s ease-in-out;
 		transition: padding .3s ease-in-out, border .3s ease-in-out;
-	}
-
-	.fixed-position #nav .navigation > li > a {
-		padding: 30px 10px;
 	}
 
 	#nav .navigation > li.active > a,
@@ -1944,8 +2144,9 @@ address {
 		margin: 0;
 		text-align: left;
 		background: #01598d;
-		box-shadow: 0 6px 8px 0 rgba(1, 105, 166, .5);
-		border-radius: 0;
+		box-shadow: 0 2px 10px 0 rgba(222, 237, 247, .2);
+		border-radius: 0 20px 20px 20px;
+		overflow: hidden;
 		opacity: 0;
 		visibility: hidden;
 		border: 0;
@@ -1957,6 +2158,10 @@ address {
 
 	#nav .dropdown-menu li {
 		border-top: 0;
+	}
+
+	#nav .dropdown-menu li + li {
+		border-top: 1px solid rgba(255, 255, 255, .4);
 	}
 
 	#nav .dropdown-menu li.active > a {
@@ -1988,6 +2193,10 @@ address {
 		-ms-flex-pack: end;
 		justify-content: flex-end;
 		width: 100%;
+	}
+
+	.news-bar .news-title {
+		font-size: 16px;
 	}
 
 	.hero-slider {
@@ -2030,6 +2239,15 @@ address {
 		right: 30px;
 		bottom: 30px;
 	}
+
+	.site-developer .img {
+		width: 30px;
+		height: 30px;
+	}
+
+	.site-developer a {
+		font-size: 14px;
+	}
 }
 
 @media (min-width: 1025px) {
@@ -2046,18 +2264,14 @@ address {
 	}
 
 	.logo-holder .img-logo {
-		width: 150px;
-		height: 150px;
+		width: 100px;
+		height: 100px;
 	}
 
 	.fixed-position .logo-holder .img-logo {
 		-webkit-transform: scale(.7);
 		-ms-transform: scale(.7);
 		transform: scale(.7);
-	}
-
-	.logo-holder .site-title {
-		width: calc(100% - 150px);
 	}
 
 	#nav .navigation {
@@ -2068,11 +2282,7 @@ address {
 
 	#nav .navigation > li > a {
 		font-size: 15px;
-		padding: 60px 12px;
-	}
-
-	.fixed-position #nav .navigation > li > a {
-		padding: 30px 15px;
+		padding: 40px 12px;
 	}
 
 	.search-opener {
@@ -2087,6 +2297,10 @@ address {
 
 	.font-sm {
 		font-size: 13px;
+	}
+
+	#footer .social-networks {
+		font-size: 28px;
 	}
 }
 

@@ -3,9 +3,9 @@
 @font-face {
   font-family: '#{$icomoon-font-family}';
   src:
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?igkxzc') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?igkxzc') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?igkxzc##{$icomoon-font-family}') format('svg');
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?bvrirs') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?bvrirs') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?bvrirs##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -26,6 +26,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-external-link {
+  &:before {
+    content: $icon-external-link; 
+  }
+}
+.icon-add_comment {
+  &:before {
+    content: $icon-add_comment; 
+  }
+}
 .icon-multiple-users-silhouette {
   &:before {
     content: $icon-multiple-users-silhouette; 
@@ -56,14 +66,49 @@
     content: $icon-bubble; 
   }
 }
+.icon-images {
+  &:before {
+    content: $icon-images; 
+  }
+}
+.icon-film3 {
+  &:before {
+    content: $icon-film3; 
+  }
+}
 .icon-bullhorn {
   &:before {
     content: $icon-bullhorn; 
   }
 }
+.icon-connection {
+  &:before {
+    content: $icon-connection; 
+  }
+}
+.icon-books {
+  &:before {
+    content: $icon-books; 
+  }
+}
 .icon-phone4 {
   &:before {
     content: $icon-phone4; 
+  }
+}
+.icon-bubbles4 {
+  &:before {
+    content: $icon-bubbles4; 
+  }
+}
+.icon-wrench {
+  &:before {
+    content: $icon-wrench; 
+  }
+}
+.icon-stats-dots {
+  &:before {
+    content: $icon-stats-dots; 
   }
 }
 .icon-arrow-up {
@@ -84,6 +129,21 @@
 .icon-youtube2 {
   &:before {
     content: $icon-youtube2; 
+  }
+}
+.icon-IE {
+  &:before {
+    content: $icon-IE; 
+  }
+}
+.icon-paper-plane {
+  &:before {
+    content: $icon-paper-plane; 
+  }
+}
+.icon-send {
+  &:before {
+    content: $icon-send; 
   }
 }
 .icon-home {
@@ -149,11 +209,6 @@
 .icon-magnifier {
   &:before {
     content: $icon-magnifier; 
-  }
-}
-.icon-add_comment {
-  &:before {
-    content: $icon-add_comment; 
   }
 }
 

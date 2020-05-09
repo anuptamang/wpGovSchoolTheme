@@ -28,6 +28,7 @@ $blue-3: #0470b9;
 $darkblue: #4B7CF5;
 $lightblue: #06b4ff;
 $fade-blue: #DEEDF7;
+$fade-blue-1: darken($fade-blue, 10);
 $indigo:  #6610f2;
 $purple:  #6f42c1;
 $pink:    #ff3366;
@@ -45,6 +46,7 @@ $colors: map-merge((
   "blue":       $blue,
   "darkblue":       $darkblue,
   "fade-blue":       $fade-blue,
+  "fade-blue-1":       $fade-blue-1,
   "blue-2":       $blue-2,
   "blue-3":       $blue-3,
   "indigo":     $indigo,
@@ -77,7 +79,7 @@ $secondary:     $gray-600;
 $success:       $green;
 $info:          $gray-100;
 $warning:       $yellow;
-$danger:        $pink;
+$danger:        $red;
 $light:         $gray-100;
 $soft:          $gray-000;
 $soft-gray:     $gray-200;
@@ -103,6 +105,7 @@ $theme-colors: map-merge((
   "dark":       $dark,
   "darkblue":       $darkblue,
   "fade-blue":       $fade-blue,
+  "fade-blue-1":       $fade-blue-1,
   "blue-2":       $blue-2,
   "blue-3":       $blue-3,
    "green":     $green,
@@ -255,7 +258,7 @@ $grid-breakpoints: map-merge(
     sm: 576px,
     md: 768px,
     lg: 1024px,
-    xl: 1400px
+    xl: 1200px
   ),
   $grid-breakpoints
 );
