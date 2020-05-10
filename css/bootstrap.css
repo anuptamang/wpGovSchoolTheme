@@ -106,7 +106,7 @@ body {
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.5625;
-	color: #313131;
+	color: #000;
 	text-align: left;
 	background-color: #fff;
 }
@@ -2698,7 +2698,7 @@ select.form-control:focus::-ms-value {
 	padding-bottom: .375rem;
 	margin-bottom: 0;
 	line-height: 1.5625;
-	color: #313131;
+	color: #000;
 	background-color: transparent;
 	border: solid transparent;
 	border-width: 1px 0;
@@ -3161,7 +3161,7 @@ textarea.form-control.is-invalid {
 .btn {
 	display: inline-block;
 	font-weight: 600;
-	color: #313131;
+	color: #000;
 	text-align: center;
 	vertical-align: middle;
 	-webkit-user-select: none;
@@ -3183,7 +3183,7 @@ textarea.form-control.is-invalid {
 	}
 }
 .btn:hover {
-	color: #313131;
+	color: #000;
 	text-decoration: none;
 }
 .btn:focus,
@@ -24449,7 +24449,7 @@ a.text-orange-darken:focus {
 }
 
 .text-body {
-	color: #313131 !important;
+	color: #000 !important;
 }
 
 .text-muted {

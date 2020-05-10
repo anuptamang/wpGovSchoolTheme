@@ -6,9 +6,13 @@
  bottom: 0;
  z-index: 9999;
  overflow: hidden;
+ opacity: 1;
+ visibility: visible;
+ @include animate(opacity visibility);
 
  .loaded & {
-  display: none;
+  opacity: 0;
+  visibility: visible;
  }
 
  &:before {

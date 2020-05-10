@@ -72,8 +72,13 @@
 
 	>li {
 		position: relative;
-		padding: 0 0 0 20px;
 		margin-bottom: 10px;
+	}
+
+	a {
+		display: block;
+		position: relative;
+		padding: 0 0 0 20px;
 
 		&:before {
 			content:$icon-angle-double-right;
@@ -82,6 +87,13 @@
 			top: 0;
 			font-family: 'icomoon';
 			color: $white;
+			@include animate(left);
+		}
+
+		&:hover {
+			&:before {
+				left: 5px;
+			}
 		}
 	}
 }

@@ -47,10 +47,12 @@ $media-expressions: (
 
 @import 'vendors/icomoon/variables';
 @import 'vendors/icomoon/style';
+@import 'vendors/custom-forms';
 @import 'vendors/slick';
+@import 'vendors/fancybox';
 
 @import 'layout/general';
 @import 'layout/header';
 @import 'layout/common';
 @import 'layout/footer';
-//@import 'layout/loader';
+// @import 'layout/loader';

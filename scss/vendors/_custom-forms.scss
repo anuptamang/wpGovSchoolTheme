@@ -1,0 +1,128 @@
+/* custom scrollbars styles */
+
+.jcf-scrollable {
+  max-height: 369px !important;
+  overflow-x: hidden !important;
+  width: 100% !important;
+  height: 100% !important;
+
+  @include media('>=tablet') {
+    max-height: 618px !important;
+  }
+
+  @include media('>=desktop') {
+    max-height: 549px !important;
+  }
+
+  #sidebar & {
+    max-height: 413px !important;
+
+    @include media('>=tablet') {
+        max-height: 413px !important;
+      }
+
+      @include media('>=desktop') {
+        max-height: 413px !important;
+      }
+  }
+}
+
+.jcf-scrollable-wrapper {
+    position: relative;
+    width: 100% !important;
+}
+
+.jcf-scrollbar {
+  z-index: 20;
+}
+
+.jcf-scrollbar-vertical {
+    position: absolute;
+    cursor: default;
+    width: 8px;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    height: 100% !important;
+}
+
+.jcf-scrollbar-vertical .jcf-scrollbar-dec,
+.jcf-scrollbar-vertical .jcf-scrollbar-inc {
+    background: #bbb;
+    height: 14px;
+    width: 14px;
+    left: 0;
+    top: 0;
+    display: none !important;
+}
+
+.jcf-scrollbar-vertical .jcf-scrollbar-inc {
+    top: auto;
+    bottom: 0;
+}
+
+.jcf-scrollbar-vertical .jcf-scrollbar-handle {
+    background: $red;
+    height: 1px;
+    width: 8px;
+    border-radius: 3px;
+}
+
+.jcf-scrollbar-vertical .jcf-scrollbar-slider {
+    height: 100% !important;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 2px;
+    background: $fade-blue;
+}
+
+.jcf-scrollbar-horizontal {
+    position: absolute;
+    background: #e3e3e3;
+    right: auto;
+    top: auto;
+    left: 0;
+    bottom: 0;
+    width: 1px;
+    height: 14px;
+    display: none !important;
+}
+
+.jcf-scrollbar-horizontal .jcf-scrollbar-dec,
+.jcf-scrollbar-horizontal .jcf-scrollbar-inc {
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    background: #bbb;
+    height: 14px;
+    width: 14px;
+}
+
+.jcf-scrollbar-horizontal .jcf-scrollbar-inc {
+    left: auto;
+    right: 0;
+}
+
+.jcf-scrollbar-horizontal .jcf-scrollbar-slider {
+    display: inline-block;
+    position: relative;
+    height: 14px;
+}
+
+.jcf-scrollbar-horizontal .jcf-scrollbar-handle {
+    position: absolute;
+    background: $red;
+    height: 14px;
+}
+
+.jcf-scrollbar.jcf-inactive .jcf-scrollbar-handle {
+    visibility: hidden;
+}
+
+.jcf-scrollbar.jcf-inactive .jcf-scrollbar-dec,
+.jcf-scrollbar.jcf-inactive .jcf-scrollbar-inc {
+    background: #e3e3e3;
+}

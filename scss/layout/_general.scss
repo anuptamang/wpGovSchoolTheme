@@ -18,6 +18,12 @@ body {
   position: relative;
 }
 
+.container {
+  &.container-sm {
+    max-width: 1000px;
+  }
+}
+
 [class^="icon-"], [class*=" icon-"] {
   font-style: normal !important;
   font-weight: normal !important;
@@ -134,8 +140,10 @@ button[type="submit"],
     vertical-align: top;
     margin-left: 7px;
     font-weight: normal;
+  }
 
-    .list-nav-pane & {
+  &.no-after-icon {
+    &:after {
       display: none;
     }
   }
@@ -206,6 +214,16 @@ button[type="submit"],
     font-size: 14px;
     min-width: 100px;
     padding: 10px 20px;
+
+    .list-nav-pane & {
+      // @include media('>=desktop') {
+      //   font-size: 11px;
+      // }
+
+      // @include media('>=widescreen') {
+      //   font-size: 13px;
+      // }
+    }
   }
 }
 
@@ -286,15 +304,15 @@ address {
   button[type='submit'] {
     display: block;
     min-width: 100px;
-    background:$white;
-    color:$blue;
-    max-width: 250px;
+    //background:$white;
+    //color:$blue;
+    max-width: 150px;
     margin: 0 auto;
     width: 100%;
     font-weight: 700;
 
     &:hover {
-      opacity: 0.8;
+      //opacity: 0.8;
     }
   }
 
@@ -457,4 +475,22 @@ address {
   background: $red;
   transition: all 0.2s linear;
   z-index: 9999;
+}
+
+.social-networks {
+  a {
+    position: relative;
+    bottom: 0;
+    @include animate(opacity bottom);
+
+    &:hover {
+      bottom: 3px;
+    }
+  }
+}
+
+.popup-holder {
+    position: relative;
+    overflow: hidden;
+    height: 0;
 }

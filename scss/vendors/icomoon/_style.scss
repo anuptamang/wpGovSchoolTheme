@@ -3,9 +3,9 @@
 @font-face {
   font-family: '#{$icomoon-font-family}';
   src:
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?bvrirs') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?bvrirs') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?bvrirs##{$icomoon-font-family}') format('svg');
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?l78omx') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?l78omx') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?l78omx##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -26,6 +26,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-zoom-out {
+  &:before {
+    content: $icon-zoom-out; 
+  }
+}
+.icon-zoom-in {
+  &:before {
+    content: $icon-zoom-in; 
+  }
+}
 .icon-external-link {
   &:before {
     content: $icon-external-link; 
@@ -34,6 +44,11 @@
 .icon-add_comment {
   &:before {
     content: $icon-add_comment; 
+  }
+}
+.icon-remove_red_eye {
+  &:before {
+    content: $icon-remove_red_eye; 
   }
 }
 .icon-multiple-users-silhouette {
@@ -96,9 +111,19 @@
     content: $icon-phone4; 
   }
 }
+.icon-printer1 {
+  &:before {
+    content: $icon-printer1; 
+  }
+}
 .icon-bubbles4 {
   &:before {
     content: $icon-bubbles4; 
+  }
+}
+.icon-user-plus {
+  &:before {
+    content: $icon-user-plus; 
   }
 }
 .icon-wrench {
@@ -109,6 +134,21 @@
 .icon-stats-dots {
   &:before {
     content: $icon-stats-dots; 
+  }
+}
+.icon-flag1 {
+  &:before {
+    content: $icon-flag1; 
+  }
+}
+.icon-eye-plus {
+  &:before {
+    content: $icon-eye-plus; 
+  }
+}
+.icon-bookmarks1 {
+  &:before {
+    content: $icon-bookmarks1; 
   }
 }
 .icon-arrow-up {
