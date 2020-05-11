@@ -1,0 +1,39 @@
+.google-map-holder {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    width: 100%;
+    height: 800px;
+    background-color: rgb(229, 227, 223);
+    box-shadow: 0 25px 40px 2px rgba(62, 56, 117, 0.07);
+
+    @include media('>=tablet') {
+        height: 500px;
+    }
+
+    @include media('>=desktop') {
+        height: 550px;
+    }
+
+    .map-marker {
+        position: absolute;
+        top: -9999px;
+        right: -9999px;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+
+    >div {
+        background-color: #DEEDF7 !important;
+    }
+}

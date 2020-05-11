@@ -3,9 +3,9 @@
 @font-face {
   font-family: '#{$icomoon-font-family}';
   src:
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?l78omx') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?l78omx') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?l78omx##{$icomoon-font-family}') format('svg');
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?5qh59b') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?5qh59b') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?5qh59b##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -51,6 +51,21 @@
     content: $icon-remove_red_eye; 
   }
 }
+.icon-local_library {
+  &:before {
+    content: $icon-local_library; 
+  }
+}
+.icon-event_available {
+  &:before {
+    content: $icon-event_available; 
+  }
+}
+.icon-menu_book {
+  &:before {
+    content: $icon-menu_book; 
+  }
+}
 .icon-multiple-users-silhouette {
   &:before {
     content: $icon-multiple-users-silhouette; 
@@ -91,6 +106,11 @@
     content: $icon-film3; 
   }
 }
+.icon-video-camera {
+  &:before {
+    content: $icon-video-camera; 
+  }
+}
 .icon-bullhorn {
   &:before {
     content: $icon-bullhorn; 
@@ -101,9 +121,19 @@
     content: $icon-connection; 
   }
 }
+.icon-book3 {
+  &:before {
+    content: $icon-book3; 
+  }
+}
 .icon-books {
   &:before {
     content: $icon-books; 
+  }
+}
+.icon-library1 {
+  &:before {
+    content: $icon-library1; 
   }
 }
 .icon-phone4 {
@@ -111,9 +141,19 @@
     content: $icon-phone4; 
   }
 }
+.icon-bell {
+  &:before {
+    content: $icon-bell; 
+  }
+}
 .icon-printer1 {
   &:before {
     content: $icon-printer1; 
+  }
+}
+.icon-download3 {
+  &:before {
+    content: $icon-download3; 
   }
 }
 .icon-bubbles4 {
@@ -126,6 +166,11 @@
     content: $icon-user-plus; 
   }
 }
+.icon-user-tie {
+  &:before {
+    content: $icon-user-tie; 
+  }
+}
 .icon-wrench {
   &:before {
     content: $icon-wrench; 
@@ -134,6 +179,11 @@
 .icon-stats-dots {
   &:before {
     content: $icon-stats-dots; 
+  }
+}
+.icon-lab1 {
+  &:before {
+    content: $icon-lab1; 
   }
 }
 .icon-flag1 {
@@ -174,6 +224,26 @@
 .icon-IE {
   &:before {
     content: $icon-IE; 
+  }
+}
+.icon-file-pdf {
+  &:before {
+    content: $icon-file-pdf; 
+  }
+}
+.icon-deaf {
+  &:before {
+    content: $icon-deaf; 
+  }
+}
+.icon-deafness {
+  &:before {
+    content: $icon-deafness; 
+  }
+}
+.icon-hard-of-hearing {
+  &:before {
+    content: $icon-hard-of-hearing; 
   }
 }
 .icon-paper-plane {
@@ -249,6 +319,11 @@
 .icon-magnifier {
   &:before {
     content: $icon-magnifier; 
+  }
+}
+.icon-dollar1 {
+  &:before {
+    content: $icon-dollar1; 
   }
 }
 

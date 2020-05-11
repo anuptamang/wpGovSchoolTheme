@@ -13,6 +13,7 @@
  .loaded & {
   opacity: 0;
   visibility: visible;
+  pointer-events: none;
  }
 
  &:before {
@@ -34,6 +35,20 @@
   width: 75px;
   height: 100px;
   z-index: 88;
+
+  &:after {
+    content:'Loading...';
+    position: absolute;
+    top: 100%;
+    margin-top: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: $white;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 700;
+  }
   
   &__bar {
     position: absolute;

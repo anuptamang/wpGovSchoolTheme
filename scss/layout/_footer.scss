@@ -9,6 +9,11 @@
 	.img-logo {
 		width: 150px;
 		height: 150px;
+		margin: 0 auto;
+
+		@include media('>=tablet') {
+			margin: 0;
+		}
 	}
 
 	.social-networks {

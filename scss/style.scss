@@ -51,8 +51,10 @@ $media-expressions: (
 @import 'vendors/slick';
 @import 'vendors/fancybox';
 
+@import 'components/map';
+
 @import 'layout/general';
 @import 'layout/header';
 @import 'layout/common';
 @import 'layout/footer';
-// @import 'layout/loader';
+@import 'layout/loader';
