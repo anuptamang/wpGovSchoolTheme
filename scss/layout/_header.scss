@@ -122,7 +122,6 @@
     @include media('>=desktop') {
       font-size: 12px;
       display: flex;
-      flex-wrap: wrap;
       padding: 0 10px 0 0;
     }
 
@@ -520,6 +519,16 @@
 
   .resize-active & {
     transition: none !important;
+  }
+}
+
+.nav-wrap {
+  height: calc(100vh - 60px);
+  overflow: auto;
+
+  @include media('>=desktop') {
+    height: auto;
+    overflow: visible;
   }
 }
 

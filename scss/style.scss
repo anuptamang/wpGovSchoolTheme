@@ -1,13 +1,13 @@
 /*
 Theme Name: Government School
-Author: Anonymous
-Author URI:
-Version: 1
+Author: Anup Kumar Tamang
+Author URI: https://anuptamang.com.np/
+Version: 1.0.1
 Description: Government School theme for Wordpress
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: Government School
-Tags: one-column, two-columns
+Text Domain: gov_school
+Tags: education, news, blog, one-column, two-columns
 Theme URI:
 */
 
@@ -52,9 +52,13 @@ $media-expressions: (
 @import 'vendors/fancybox';
 
 @import 'components/map';
+@import 'components/textSlider';
+
+@import 'layout/loader';
 
 @import 'layout/general';
 @import 'layout/header';
 @import 'layout/common';
 @import 'layout/footer';
-@import 'layout/loader';
+
+@import 'layout/template_maintenance';

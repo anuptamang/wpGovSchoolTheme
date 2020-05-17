@@ -1,9 +1,11 @@
 <?php
 /*
-Template Name: Home
+Template Name: Homepage
 */
 get_header(); ?>
-	<?php while ( have_posts( ) ) : the_post(); ?>
-			<?php the_content(); ?>
-	<?php endwhile; ?>
+
+<?php get_template_part('template-parts/hero/hero-slider'); ?>
+<?php get_template_part('template-parts/about/about-section'); ?>
+<?php get_template_part('template-parts/news-featured/news-featured-section'); ?>
+
 <?php get_footer(); ?>

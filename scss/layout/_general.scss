@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'Skyfall';
+    src: url('./fonts/audiowide-regular-skyfall.eot');
+    src: url('./fonts/audiowide-regular-skyfall.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/audiowide-regular-skyfall.woff2') format('woff2'),
+         url('./fonts/audiowide-regular-skyfall.woff') format('woff'),
+         url('./fonts/audiowide-regular-skyfall.ttf') format('truetype'),
+         url('./fonts/audiowide-regular-skyfall.svg#audiowideregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .resize-active {
   * {
     transition: none !important;
@@ -5,8 +17,8 @@
 }
 
 body {
-  overflow: hidden;
-  background: linear-gradient(to bottom, rgba($fade-blue,1) 0%,rgba($fade-blue,1) 51%,rgba($fade-blue,0.88) 57%,rgba($fade-blue,0.68) 67%,rgba($fade-blue,0.45) 78%,rgba($fade-blue,0.27) 87%,rgba($fade-blue,0.02) 99%,rgba($fade-blue,0) 100%);
+  background: $fade-blue;
+  //overflow: hidden;
 
   &.loaded {
     overflow: visible;
@@ -24,7 +36,8 @@ body {
   }
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^='icon-'],
+[class*=' icon-'] {
   font-style: normal !important;
   font-weight: normal !important;
 }
@@ -61,6 +74,16 @@ button {
   position: relative;
   z-index: 1;
 
+  &.blue {
+    &:before {
+      background: linear-gradient(
+        180deg,
+        rgba($blue, 0.54) 0%,
+        rgba($blue-2, 0.6) 100%
+      );
+    }
+  }
+
   &:before {
     content: '';
     position: absolute;
@@ -69,7 +92,11 @@ button {
     right: 0;
     bottom: 0;
     z-index: -1;
-    background: linear-gradient(180deg, rgba(61, 55, 48, 0.54) 0%, rgba(32, 27, 23, 0.6) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(61, 55, 48, 0.54) 0%,
+      rgba(32, 27, 23, 0.6) 100%
+    );
   }
 }
 
@@ -105,17 +132,60 @@ button {
   }
 }
 
-input[type="submit"],
-button[type="submit"],
+@-webkit-keyframes btnBgAnimate {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-moz-keyframes btnBgAnimate {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes btnBgAnimate {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+input[type='submit'],
+button[type='submit'],
 .btn {
+  position: relative;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   padding: 13px 20px 17px;
   border-radius: 50px;
   color: $white;
-  background:$primary;
-  border:0;
+  background: $primary;
+  border: 0;
   margin: 0;
   outline: none;
   text-transform: capitalize;
@@ -126,15 +196,41 @@ button[type="submit"],
   white-space: nowrap;
   letter-spacing: -0.14px;
   box-shadow: 0 0 6px 3px rgba($black, 0.2);
- @include animate(color opacity background border box-shadow);
+  transform: perspective(1px) translateZ(0);
+  @include animate(color opacity background border box-shadow transform);
 
   @include media('>=desktop') {
-     min-width: 250px;
+    min-width: 250px;
     font-size: 21px;
   }
 
+  &:before {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    top: 100%;
+    left: 5%;
+    height: 10px;
+    width: 90%;
+    opacity: 0;
+    transform: perspective(1px) translateZ(0);
+    background: -webkit-radial-gradient(
+      center,
+      ellipse,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0) 80%
+    );
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0) 80%
+    );
+    transition: opacity, transform 0.3s linear;
+  }
+
   &:after {
-    content:$icon-add_comment;
+    content: $icon-add_comment;
     font-family: 'icomoon';
     display: inline-block;
     vertical-align: top;
@@ -152,58 +248,57 @@ button[type="submit"],
   &:active,
   &.active {
     color: $white;
-    background:rgba($primary, 0.8);
+    // background:rgba($primary, 0.8);
+    transform: translateY(-5px);
+
+    &:before {
+      opacity: 1;
+      transform: translateY(5px);
+    }
   }
 
   &.btn-primary {
-    background:$primary;
+    background: $primary;
 
     &:hover,
     &:active,
     &.active {
       color: $white;
-      background:rgba($primary, 0.8);
+      // background:rgba($primary, 0.8);
     }
   }
 
   &.btn-outlined {
     border: 2px solid $primary;
     color: $primary;
-    background:none;
+    background: none;
 
     &:hover,
     &:active,
     &.active {
       color: $white;
-      background:$primary;
-    }
-  }
-
-  &.btn-shadow {
-    background:none;
-    color:$light-black;
-    border:0;
-    box-shadow: 0 0 5px 0 rgba($light-black, 0.75);
-
-    &:hover,
-    &:active,
-    &.active {
-      box-shadow: 0 0 10px 0 rgba($light-black, 0.75);
-      background:none;
-      color:$light-black;
+      // background:$primary;
     }
   }
 
   &.btn-white {
-    background:$white;
+    background: $white;
     color: $blue;
 
     &:hover,
     &:active,
     &.active {
       color: $blue;
-      background:darken($white, 15);
+      // background:darken($white, 15);
     }
+  }
+
+  &.btn-bg-animate {
+    background: linear-gradient(270deg, $light-red, $red);
+    background-size: 400% 400%;
+    -webkit-animation: btnBgAnimate 2s ease infinite;
+    -moz-animation: btnBgAnimate 2s ease infinite;
+    animation: btnBgAnimate 2s ease infinite;
   }
 
   &.btn-block {
@@ -249,16 +344,16 @@ button[type="submit"],
     display: block;
     margin: 0;
     padding: 0;
-    border:0;
-    background:none;
+    border: 0;
+    background: none;
     outline: none;
     width: 40px;
     height: 20px;
     border: 2px solid $white;
     border-radius: 50px;
-    font-size:0;
-    line-height:0;
-    transition:$animation;
+    font-size: 0;
+    line-height: 0;
+    transition: $animation;
 
     @include media('>=tablet') {
       // width: 17px;
@@ -267,13 +362,13 @@ button[type="submit"],
     }
 
     &:hover {
-      background:$white;
+      background: $white;
     }
   }
 
   .slick-active {
     button {
-      background:$white;
+      background: $white;
     }
   }
 }
@@ -347,6 +442,15 @@ address {
 
   br {
     display: none;
+  }
+
+  span.wpcf7-not-valid-tip {
+    color: #f2a2a0;
+  }
+
+  div.wpcf7-response-output {
+    border: 2px solid #f2a2a0;
+    color: $white;
   }
 }
 
@@ -490,7 +594,36 @@ address {
 }
 
 .popup-holder {
-    position: relative;
-    overflow: hidden;
-    height: 0;
+  position: relative;
+  overflow: hidden;
+  height: 0;
+}
+
+.post-edit-link {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  z-index: 10;
+  background: $red;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  color: $white;
+  font-size: 0;
+  line-height: 0;
+  text-align: center;
+
+  &:hover {
+    color: $white;
+    background: darken($red, 15);
+  }
+
+  &:before {
+    content: $icon-edit;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 20px;
+    line-height: 40px;
+    font-family: 'icomoon';
+  }
 }

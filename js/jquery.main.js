@@ -6,12 +6,33 @@ jQuery(function () {
   initAccordion();
   initScrollProgress();
   initStickyScrollBlock();
-  initLavaLampMenu();
   initFancybox();
   initCustomForms();
   initGoogleMap();
+  initTextAnimSlider();
+  initLavaLampMenu();
   //initMasonry();
+  initPostDateFormat();
 });
+
+function initPostDateFormat() {
+  var postMeta = jQuery('.news-meta');
+
+  postMeta.each(function() {
+    var self = $(this);
+    var textTitle = self.find('.text-title');
+    var textInfo = self.find('.text-info');
+
+    var modTextTitle = textTitle.text().split(" ");
+
+    var modTextInfo = textInfo.text().split(",");
+    var modTextInfoFinal = modTextInfo.shift();
+    var textInfoA = modTextInfoFinal.split(" ");
+
+    textTitle.text(modTextTitle[0]);
+    textInfo.text(textInfoA[1] + ', ' + textInfoA[2]);
+  })
+}
 
 // loaded state script
 (function (w) {
@@ -22,6 +43,82 @@ jQuery(function () {
     }
   });
 })(window);
+
+function initTextAnimSlider() {
+  var textAnimHolder = document.querySelector('[data-words]');
+
+  if(textAnimHolder !== null) {
+    console.log('has text animate')
+    var textAnimItem = document.querySelectorAll('.text-anim-item');
+    var textAnimItems = document.querySelector('.text-anim-items');
+    var animLine = document.querySelector('.anim-line');
+    var animIn = 'anim-in';
+    var animOut = 'anim-out';
+    var lineActiveClass = 'line-active';
+    var animNextItem = null;
+    var animPrevItem = null;
+    var animFirstLoad = false;
+    var animDuration = textAnimHolder.getAttribute('data-delay');
+    var animCounter = 0;
+    var setTimeAnim;
+    var setTimeAnimResize;
+
+    animFunc();
+    getHolderWidth();
+
+    function animFunc() {
+      clearTimeout(setTimeAnim);
+
+      setTimeAnim = setTimeout(function () {
+        animFirstLoad = true;
+
+        if (animPrevItem !== null) {
+          animPrevItem.classList.add(animOut);
+        }
+        animNextItem = textAnimItems.children[animCounter];
+        animNextItem.classList.remove(animOut);
+        animNextItem.classList.add(animIn);
+
+        animLine.style.width = animNextItem.clientWidth + 'px';
+        animLine.classList.add(lineActiveClass);
+
+        animPrevItem = animNextItem;
+
+        if (animCounter === textAnimItem.length - 1) {
+          animCounter = 0;
+        } else {
+          animCounter++;
+        }
+        animFunc();
+      }, animFirstLoad ? animDuration : 100);
+    }
+
+    function getHolderWidth() {
+      var itemsWidth = [];
+
+      for(var i =0; i < textAnimItem.length; i++) {
+        itemsWidth.push(textAnimItem[i].clientWidth);
+      }
+
+    var biggestWidth = Math.max.apply(null, itemsWidth) + 'px';
+
+    textAnimHolder.style.width = biggestWidth;
+  }
+
+  function resizeHandler() {
+    clearTimeout(setTimeAnim);
+    clearTimeout(setTimeAnimResize);
+    getHolderWidth();
+
+    setTimeAnimResize = setTimeout(function() {
+      animFunc();
+    }, 50);
+  }
+
+  window.addEventListener('resize', resizeHandler);
+  window.addEventListener('orientationchange', resizeHandler);
+}
+}
 
 //custom google map
 function initGoogleMap() {
@@ -88,7 +185,8 @@ function initCustomForms() {
 function initFancybox() {
   jQuery('a.lightbox, [data-fancybox]').fancybox({
     parentEl: 'body',
-    margin: [50, 0]
+    margin: [50, 0],
+    transitionEffect: "slide"
   });
 }
 
@@ -107,24 +205,24 @@ function initLavaLampMenu() {
   var $win = jQuery(window);
   var body = jQuery('body, html');
   var resizeClass = 'resize-active';
-  var item = jQuery('.nav-item');
+  var item = jQuery('#navigation .menu-item');
   var lamp = jQuery('<li class="lava-lamp"></li>');
-  var activeList = jQuery('.nav-item.active');
-  var flag, timer;
+  var activeList = jQuery('#navigation .menu-item.active').length ? jQuery('#navigation .menu-item.active') : jQuery('.menu-item-home');
+  var flag, timer;  
 
-  jQuery('.navigation').each(function () {
+  jQuery('#navigation').each(function () {
     var holder = jQuery(this);
     var currentList = activeList;
     var currentLeft;
     var currentWidth;
 
-    body.on('mouseenter', '.nav-item', function () {
+    body.on('mouseenter', '.menu-item', function () {
       var $this = jQuery(this);
       currentList = $this;
       updateLamp();
     });
 
-    body.on('mouseleave', '.navigation', function () {
+    body.on('mouseleave', '#navigation', function () {
       currentList = activeList;
       updateLamp();
     });
@@ -319,7 +417,7 @@ function initCustomHover() {
   ResponsiveHelper.addRange({
     '1024..': {
       on: function () {
-        jQuery('#nav .nav-link').touchHover();
+        jQuery('#nav .menu-item a').touchHover();
       },
     },
   });
