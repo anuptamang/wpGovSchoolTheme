@@ -1,5 +1,5 @@
 <!-- get data from 'page_id=68' -->
-<?php $the_query = new WP_Query('page_id=68'); ?>
+<?php $the_query = new WP_Query(array('pagename' => 'information-center')); ?>
 
 <?php while( $the_query -> have_posts() ) : $the_query -> the_post(); ?>  
   <section class="bg-blue-2 has-bg has-overlay has-parallax" <?php if (has_post_thumbnail( $post->ID ) ) {
@@ -70,18 +70,20 @@
                     class="icon-images mr-1"></span> <?php _e('फोटो फिचर','base') ?>
                 </h2>
                 <div class="gallery-widget">
-                  <div class="slide">
-                    <a class="has-bg img-slide" href="images/img-slide1.jpg" data-fancybox="gallery"
-                      style="background-image: url('./images/img-slide1.jpg');">
-                      <span class="icon-zoom-in zoom"></span>
-                    </a>
-                  </div>
-                  <div class="slide">
-                    <a class="has-bg img-slide" href="images/img-slide2.jpg" data-fancybox="gallery"
-                      style="background-image: url('./images/img-slide2.jpg');">
-                      <span class="icon-zoom-in zoom"></span>
-                    </a>
-                  </div>
+                  <?php  
+                      $args = array('post_type' => 'gallery', 'category_name' => 'featured_gallery');
+                      $loop = new WP_Query($args);
+
+                      while ($loop->have_posts()) : $loop->the_post();
+                    ?> 
+                    <?php while( have_rows('gallery') ) : the_row() ?>
+                      <div class="slide">
+                        <a class="has-bg img-slide" href="<?php echo (($image = get_sub_field('image')) ? $image : '') ?>" data-fancybox="gallery" <?php echo (($image = get_sub_field('image')) ? 'style="background-image: url('.$image.')"' : '') ?>>
+                        <span class="icon-zoom-in zoom"></span>
+                      </a>
+                      </div> 
+                   <?php endwhile ?> 
+                  <?php endwhile ?>               
                 </div>
               </div>
             </div>

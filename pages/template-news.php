@@ -6,7 +6,7 @@ get_header(); ?>
 
 <?php get_template_part('blocks/intro-banner'); ?>
 <h2>सुचना तथा समाचार</h2>
-<?php $catquery = new WP_Query( 'cat=3&posts_per_page=5' ); ?>
+<?php $catquery = new WP_Query( 'category_name=news&posts_per_page=5' ); ?>
   <ul>
   
     <?php while($catquery->have_posts()) : $catquery->the_post(); ?>

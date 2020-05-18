@@ -2,7 +2,7 @@
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
         echo 'style="background-image: url('.$image[0].')"';        
       } else {
-        $placeholder = get_field('post_banner', 'options');
+        $placeholder = get_field('page_banner', 'options');
         echo 'style="background-image: url('.$placeholder.')"';
       }?>>
     <div class="container block-vc d-flex align-items-center justify-content-center">
