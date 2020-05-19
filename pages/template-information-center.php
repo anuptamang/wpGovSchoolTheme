@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: news
+Template Name: Information Center
 */
 get_header(); ?>
 

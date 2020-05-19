@@ -10,9 +10,9 @@ jQuery(function () {
   initCustomForms();
   initGoogleMap();
   initTextAnimSlider();
-  initLavaLampMenu();
   //initMasonry();
   initPostDateFormat();
+  initLavaLampMenu();
 });
 
 function initPostDateFormat() {
@@ -205,9 +205,9 @@ function initLavaLampMenu() {
   var $win = jQuery(window);
   var body = jQuery('body, html');
   var resizeClass = 'resize-active';
-  var item = jQuery('#navigation .menu-item');
+  var item = jQuery('#navigation > .menu-item');
   var lamp = jQuery('<li class="lava-lamp"></li>');
-  var activeList = jQuery('#navigation .menu-item.active').length ? jQuery('#navigation .menu-item.active') : jQuery('.menu-item-home');
+  var activeList = jQuery('#navigation > .menu-item.active').length ? jQuery('#navigation > .menu-item.active') : jQuery('.menu-item-home');
   var flag, timer;  
 
   jQuery('#navigation').each(function () {
@@ -216,7 +216,7 @@ function initLavaLampMenu() {
     var currentLeft;
     var currentWidth;
 
-    body.on('mouseenter', '.menu-item', function () {
+    body.on('mouseenter', '#navigation > .menu-item', function () {
       var $this = jQuery(this);
       currentList = $this;
       updateLamp();

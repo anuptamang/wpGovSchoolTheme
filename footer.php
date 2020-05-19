@@ -10,7 +10,7 @@
                 <?php endif ?>
               </a>
             </div>
-            <h4 class="text-white mb-4">सम्पर्क ठेगाना</h4>
+            <h4 class="text-white mb-4"><?php _e('सम्पर्क ठेगाना' , 'government-school') ?></h4>
             <address class="text-white">
               <?php if( $footer_address = get_field('footer_address', 'options') ) : ?>
                   <?php echo $footer_address ?>
@@ -19,7 +19,7 @@
             
           </div>
           <div class="col-md-4 mb-4 mb-md-0">
-            <h4 class="text-white mb-4">उपयोगी लिंकहरु</h4>
+            <h4 class="text-white mb-4"><?php _e('उपयोगी लिंकहरु', 'government-school') ?></h4>
             <?php if($footer_links = get_field('footer_links', 'options')): ?>
                 <ul class="list-unstyled nav-footer row">
                 <?php foreach ($footer_links as $footer_link): ?>
@@ -40,7 +40,7 @@
           </div>
           <div class="col-md-4">
             <div class="pl-xl-10">
-              <h4 class="text-white mb-4">सम्पर्क गर्नुहोस</h4>
+              <h4 class="text-white mb-4"><?php _e('सम्पर्क गर्नुहोस', 'government-school') ?></h4>
               <?php if( $contact_form = get_field('contact_form', 'options') ) : ?>
                 <?php echo do_shortcode($contact_form) ?>
               <?php endif ?>
@@ -52,13 +52,13 @@
         <div class="container py-3 text-center text-lg-left text-white">
           <div class="row align-items-center">
             <div class="col-lg-6">
-              <p class="mb-2 mb-lg-0 copyright">&copy; <?php echo date( 'Y' )  ?> सर्बाधिकार <a href="<?php echo home_url() ?>" class="text-white"><?php echo get_bloginfo('title') ?></a>मा
-                निहित।</p>
+              <p class="mb-2 mb-lg-0 copyright">&copy; <?php echo date( 'Y' )  ?> <?php _e('सर्बाधिकार', 'government-school') ?> <a href="<?php echo home_url() ?>" class="text-white"><?php echo get_bloginfo('title') ?></a><?php _e('मा
+                निहित।', 'government-school') ?></p>
             </div>
             <div class="col-lg-6">
               <div class="site-developer font-weight-bold text-white d-flex justify-content-center justify-content-lg-end align-items-center">
-                  Designed &
-                  Developed By: <a class="text-white" href="https://anuptamang.com.np" target="_blank">
+                  <?php _e('Designed &
+                  Developed By:', 'government-school') ?> <a class="text-white" href="https://anuptamang.com.np" target="_blank">
                   <span class="img">
                       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 58.6 55" xml:space="preserve">
                         <style>
@@ -82,7 +82,7 @@
                         </switch>
                       </svg>
                   </span>
-                    Anup K. Tamang</a>
+                    <?php _e('Anup K. Tamang', 'government-school') ?></a>
                 </div>
             </div>
           </div>

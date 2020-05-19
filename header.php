@@ -66,7 +66,7 @@
             </ul>
             <div class="e-btn-holder ml-2">
               <a href="https://www.epati.mahendramabi.edu.np" target="_blank" class="btn btn-primary bg-danger btn-bg-animate btn-sm no-after-icon">
-                  <span class="icon-IE mr-1"></span>- <?php _e( 'ईपाटि', 'base' ); ?>
+                  <span class="icon-IE mr-1"></span>- <?php _e( 'ईपाटि', 'government-school' ); ?>
                 </a>
               </div>
             </div>
@@ -133,12 +133,12 @@
           <div class="news-bar text-white">
             <div class="container d-md-flex">
               <div class="title d-none d-md-block">
-                <a class="text-white" href="#"><span class="icon-bullhorn mr-3"><span></span></span> <?php _e('ताजा समाचार', 'base') ?> :</a>
+                <a class="text-white" href="#"><span class="icon-bullhorn mr-3"><span></span></span> <?php _e('ताजा समाचार', 'government-school') ?> :</a>
               </div>
-              <?php $catquery = new WP_Query( 'cat=3&posts_per_page=10' ); ?>
+              <?php $category = new WP_Query( 'category_name=news&posts_per_page=10' ); ?>
                 <div class="news-bar-slider">
                 
-                  <?php while($catquery->have_posts()) : $catquery->the_post(); ?>
+                  <?php while($category->have_posts()) : $category->the_post(); ?>
                 
                   <div class="slide"><a class="news-title" href="<?php the_permalink() ?>"><?php the_title(); ?></a></div>
                   <?php endwhile;

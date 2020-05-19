@@ -20,7 +20,7 @@
           <div class="description">
             <h2><?php the_title() ?></h2>
             <?php echo $description ?>
-            <?php edit_post_link(__('Edit', 'base')); ?>
+            <?php edit_post_link(__('Edit', 'government-school')); ?>
           </div>
         </div>
       </div>

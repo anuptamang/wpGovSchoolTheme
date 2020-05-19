@@ -12,15 +12,15 @@
     <div class="col-lg-4 d-flex mb-6 mb-lg-0">
       <div class="info-box bg-fade-blue-1 team-summary">
         <h2 class="h4 block-heading bg-primary text-white px-6 py-4 mb-0"><span
-            class="icon-multiple-users-silhouette mr-1"></span> <?php _e('पदाधिकारी / कर्मचारी','base') ?> <a href="
-              <?php $the_query = new WP_Query('page_id=56'); ?>
+            class="icon-multiple-users-silhouette mr-1"></span> <?php _e('पदाधिकारी / कर्मचारी','government-school') ?> <a href="
+              <?php $the_query = new WP_Query(array( 'pagename' => 'about-us/staffs' )); ?>
               <?php while( $the_query -> have_posts() ) : $the_query -> the_post(); ?>  
               <?php echo the_permalink() ?>
               <?php endwhile;
                   wp_reset_postdata();
                   ?>
             "
-            class="link text-white font-sm"><?php _e('सबै हेर्नुहोस', 'base') ?></a>
+            class="link text-white font-sm"><?php _e('सबै हेर्नुहोस', 'government-school') ?></a>
         </h2>
         <div class="p-6 members-row">
           <div class="row mb-n6">

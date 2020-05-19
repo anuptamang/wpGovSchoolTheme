@@ -1,4 +1,4 @@
-<!-- Generic Blogs page -->
+<!-- Generic index page -->
 
 <?php get_header() ?> 
   <?php get_template_part('blocks/intro-banner'); ?>

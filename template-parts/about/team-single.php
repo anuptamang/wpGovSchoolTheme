@@ -25,7 +25,7 @@
       <div class="description">
         <h5><?php the_title() ?></h5>
         <p><?php echo $role ?></p>
-        <a href="#popup-featured-<?php echo $teamId ?>" class="btn btn-primary btn-sm lightbox"><?php _e('थप पढ्नुहोस','base') ?></a>
+        <a href="#popup-featured-<?php echo $teamId ?>" class="btn btn-primary btn-sm lightbox"><?php _e('थप पढ्नुहोस','government-school') ?></a>
       </div>
     </div>
   </div>

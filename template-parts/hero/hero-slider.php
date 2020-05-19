@@ -16,7 +16,7 @@
     <div class="container">
       <div class="caption">
         <h1 class="text-white"><?php the_title(); ?></h1>
-        <a href="<?php echo get_post_permalink($post->ID) ?>" class="btn btn-primary btn-white"><?php _e('थप पढ्नुहोस','base') ?></a>
+        <a href="<?php echo get_post_permalink($post->ID) ?>" class="btn btn-primary btn-white"><?php _e('थप पढ्नुहोस','government-school') ?></a>
       </div>
     </div>
   </div>

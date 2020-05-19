@@ -3,7 +3,7 @@
   <div class="container py-10">
     <?php if ( have_posts() ) : ?>
       <div class="title">
-        <h1><?php printf( __( 'Search Results for: %s', 'wordpress' ), '<span>' . get_search_query() . '</span>') ?></h1>
+        <h1><?php printf( __( 'Search Results for: %s', 'government-school' ), '<span>' . get_search_query() . '</span>') ?></h1>
       </div>
       <?php while ( have_posts() ) : the_post() ?>
         <?php get_template_part( 'blocks/content', get_post_type() ) ?>

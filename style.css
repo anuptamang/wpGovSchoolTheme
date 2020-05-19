@@ -6,7 +6,7 @@ Version: 1.0.1
 Description: Government School theme for Wordpress
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: gov_school
+Text Domain: government-school
 Tags: education, news, blog, one-column, two-columns
 Theme URI:
 */
@@ -2576,6 +2576,7 @@ address {
 	font-size: 0;
 	line-height: 0;
 	text-align: center;
+	font-weight: normal;
 }
 
 .post-edit-link:hover {
@@ -3769,7 +3770,7 @@ a.img-avatar:hover {
 	}
 
 	.logo-holder .site-title address {
-		font-size: 15px;
+		font-size: 14px;
 		line-height: 1.3;
 	}
 
