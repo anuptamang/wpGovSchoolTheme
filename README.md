@@ -1,1 +1,1 @@
-## Wordpress Theme for the government schools
+## Wordpress Theme for the government schools.
