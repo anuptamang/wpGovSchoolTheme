@@ -17,7 +17,7 @@ $breakpoints: (
   'phone': 576px,
   'tablet': 768px,
   'desktop': 1024px,
-  'widescreen': 1200px,
+  'widescreen': 1300px,
 );
 
 // keywords
@@ -53,6 +53,7 @@ $media-expressions: (
 
 @import 'components/map';
 @import 'components/textSlider';
+// @import 'components/contact-form';
 
 @import 'layout/loader';
 

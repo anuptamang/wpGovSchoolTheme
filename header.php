@@ -13,9 +13,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="<?php bloginfo( 'charset' ) ?>">
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ) ?>">
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700&display=swap" rel="stylesheet">
   <?php wp_head() ?>
 </head>
-<body <?php body_class() ?>>
+<body <?php body_class() ?> <?php echo (($image = get_field('bg_watermark', 'options')) ? 'style="background-image: url('.$image.')"' : '') ?>>
   <div id="wrapper">
     <div data-progress></div>
     <div class="loading">
@@ -29,7 +30,7 @@
       </div>
     </div>
     <header id="header">
-    <div class="top-bar bg-blue-2">
+      <div class="top-bar bg-blue-2">
       <div class="container py-1">
         <div class="row align-items-center">
           <div class="col-md-7 text-white">
@@ -38,46 +39,50 @@
                 <span class="icon-calendar"></span>
                 <?php echo date('l jS \of F Y'); ?> | 
                 <?php echo get_nepali_today_date(); ?>
+                <span class="np-flag"><?php if( $nepal_flag = get_field('nepal_flag', 'options') ) : ?>
+                        <?php echo wp_get_attachment_image($nepal_flag, 'full') ?>
+                      <?php endif ?></span>
               </a>
             </div>
           </div>
           <div class="col-md-5 d-flex justify-content-center justify-content-md-end align-items-center">
-            <ul class="list-inline social-networks d-flex justify-content-center justify-content-md-end mb-0 mx-n2">
-              <li class="list-inline-item m-0 px-2">
+            <ul class="list-inline social-networks d-flex justify-content-center justify-content-md-end mb-0 mx-n1 mx-md-n2">
+              <li class="list-inline-item m-0 px-1 px-md-2">
                 <?php if( $facebook = get_field('facebook', 'options') ) : ?>
                   <a href="<?php echo $facebook ?>" class="text-white"><span class="icon-facebook2"></span></a>
                 <?php endif ?>
               </li>
-              <li class="list-inline-item m-0 px-2">
+              <li class="list-inline-item m-0 px-1 px-md-2">
                 <?php if( $youtube = get_field('youtube', 'options') ) : ?>
                   <a href="<?php echo $youtube ?>" class="text-white"><span class="icon-youtube2"></span></a>
                 <?php endif ?>
               </li>
-              <li class="list-inline-item m-0 px-2">
-                <?php if( $email = get_field('email', 'options') ) : ?>
-                  <a href="mailto:<?php echo $email ?>" class="text-white"><span class="icon-envelope"></span></a>
-                <?php endif ?>
-              </li>
-              <li class="list-inline-item m-0 px-2">
-                <?php if( $phone = get_field('phone', 'options') ) : ?>
-                  <a href="tel:<?php echo $phone ?>" class="text-white"><span class="icon-phone4"></span></a>
-                <?php endif ?>
-              </li>
             </ul>
-            <div class="e-btn-holder ml-2">
-              <a href="https://www.epati.mahendramabi.edu.np" target="_blank" class="btn btn-primary bg-danger btn-bg-animate btn-sm no-after-icon">
-                  <span class="icon-IE mr-1"></span>- <?php _e( 'ईपाटि', 'government-school' ); ?>
-                </a>
+            <div class="e-btn-holder d-inline-block ml-2">
+                <?php $the_query = new WP_Query(array('pagename' => 'epati')); ?>
+                <?php while( $the_query -> have_posts() ) : $the_query -> the_post(); ?> 
+                <a href="<?php echo the_permalink() ?>" target="_blank" class="btn btn-primary bg-danger btn-bg-animate btn-sm no-after-icon">
+                    <span class="icon-IE mr-1"></span>- <?php the_title() ?>
+                  </a>
+              <?php endwhile ?>
               </div>
+            <div class="e-btn-holder d-inline-block ml-2">
+              <?php $the_query = new WP_Query(array('pagename' => 'elearning')); ?>
+                <?php while( $the_query -> have_posts() ) : $the_query -> the_post(); ?> 
+                <a href="<?php echo the_permalink() ?>" target="_blank" class="btn btn-primary bg-danger btn-bg-animate btn-sm no-after-icon">
+                    <span class="icon-IE mr-1"></span>- <?php the_title() ?>
+                  </a>
+              <?php endwhile ?>
+              </div>
+            </div>
             </div>
           </div>
         </div>
-      </div>
       <div class="sticky-header-wrapper">
         <div class="header-holder bg-primary">
           <div class="container py-1 py-lg-0">
             <div class="row align-items-center">
-              <div class="col-md-6 col-lg-4">
+              <div class="col-md-8 col-lg-5 d-flex">
                 <a href="<?php echo home_url() ?>" class="logo-holder">
                   <div class="img-logo">
                     <div class="img">
@@ -88,19 +93,18 @@
                   </div>
                   <div class="site-title">
                     <div class="title">
-                      <?php if( $site_title = get_field('site_title', 'options') ) : ?>
-                        <?php echo $site_title ?>
-                      <?php endif ?>
+                      <?php echo get_bloginfo('title') ?>
                     </div>
-                    <address class="m-0 d-none d-md-block">
-                      <?php if( $site_sub_title = get_field('site_sub_title', 'options') ) : ?>
-                        <?php echo $site_sub_title ?>
-                      <?php endif ?>
+                    <address class="m-0">
+                      <?php echo get_bloginfo('description') ?>
                     </address>
                   </div>
+                   <span class="np-flag"><?php if( $nepal_flag = get_field('nepal_flag', 'options') ) : ?>
+                        <?php echo wp_get_attachment_image($nepal_flag, 'full') ?>
+                      <?php endif ?></span>
                 </a>
               </div>
-              <div class="col-md-6 col-lg-8">
+              <div class="col-md-4 col-lg-7">
                 <nav id="nav" class="main-nav">
                   <a href="#" class="nav-opener"><span></span></a>
                   <div class="nav-drop">
@@ -129,30 +133,30 @@
             </div>
           </div>
         </div>
-        <div class="news-bar-wrapper">
-          <div class="news-bar text-white">
-            <div class="container d-md-flex">
-              <div class="title d-none d-md-block">
-                <a class="text-white" href="#"><span class="icon-bullhorn mr-3"><span></span></span> <?php _e('ताजा समाचार', 'government-school') ?> :</a>
-              </div>
-              <?php $category = new WP_Query( 'category_name=news&posts_per_page=10' ); ?>
-                <div class="news-bar-slider">
-                
-                  <?php while($category->have_posts()) : $category->the_post(); ?>
-                
-                  <div class="slide"><a class="news-title" href="<?php the_permalink() ?>"><?php the_title(); ?></a></div>
-                  <?php endwhile;
-                    wp_reset_postdata();
-                    ?>
-                </div>
+      </div>
+      <div class="news-bar-wrapper">
+        <div class="news-bar text-white">
+          <div class="container d-md-flex">
+            <div class="title d-none d-md-block">
+              <a class="text-white" href="#"><span class="icon-bullhorn mr-3"><span></span></span> <?php _e('ताजा समाचार', 'government-school') ?> :</a>
             </div>
-          </div>
-          <div class="container search-hold-wrapper d-flex justify-content-end">
-            <div class="search-holder d-none d-md-flex">
-              <a href="#" class="search-opener"><span class="icon-magnifier"></span></a>
-              <div class="search-drop">
-                <?php get_search_form() ?>
+            <?php $category = new WP_Query( 'category_name=news&posts_per_page=10' ); ?>
+              <div class="news-bar-slider">
+              
+                <?php while($category->have_posts()) : $category->the_post(); ?>
+              
+                <div class="slide"><a class="news-title" href="<?php the_permalink() ?>"><?php the_title(); ?></a></div>
+                <?php endwhile;
+                  wp_reset_postdata();
+                  ?>
               </div>
+          </div>
+        </div>
+        <div class="container search-hold-wrapper d-flex justify-content-end">
+          <div class="search-holder d-none d-md-flex">
+            <a href="#" class="search-opener"><span class="icon-magnifier"></span></a>
+            <div class="search-drop">
+              <?php get_search_form() ?>
             </div>
           </div>
         </div>

@@ -3,6 +3,12 @@
 Template Name: team page
 */
 get_header(); ?>
+<div class="container">
+  <div class="breadcrumbs">
+    <?php if(function_exists('bcn_display')) {
+    bcn_display();}?>
+  </div>
+</div>
 <?php get_template_part('blocks/intro-banner'); ?>
 
 <div class="container py-10">

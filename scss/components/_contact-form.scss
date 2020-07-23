@@ -1,0 +1,155 @@
+.contact-form {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0;
+
+  @media only screen and (min-width: 768px) {
+    // width: 305px;
+  }
+
+  .input-holder {
+    margin-bottom: 15px;
+    position: relative;
+  }
+
+  .form-control {
+    width: 100%;
+    display: block;
+    -webkit-appearance: none;
+    border: 0;
+    background: #d5e9fa;
+    height: 42px;
+    color: #313131;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 4px 15px;
+    margin: 0;
+    outline: none;
+    border-radius: 20px;
+    @include animate(padding, background);
+
+    @include placeholder {
+      color: rgba(#313131, 0.6);
+    }
+  }
+
+  .input-success {
+    .form-control,
+    .text-counter {
+        background:#c5e4ce !important;
+    }
+  }
+
+  .input-error {
+    .form-control {
+        padding-bottom: 0;
+        padding-top: 10px;
+    }
+
+    textarea {
+        &.form-control {
+            padding-top: 15px;
+        }
+      }
+  }
+
+  textarea {
+    resize: none;
+
+    &.form-control {
+      height: 140px !important;
+      padding-bottom: 25px;
+    }
+  }
+
+  .textarea-holder {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .text-counter {
+    position: absolute;
+    right: 1px;
+    left: 1px;
+    bottom: 1px;
+    background: #d5e9fa;
+    z-index: 2;
+    color: #313131;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 1px 20px;
+    text-align: right;
+    border-radius: 0 0 20px 20px;
+    @include animate(background);
+  }
+
+  button[type='submit'] {
+    min-width: 150px;
+    width: auto !important;
+
+    &:not(:disabled) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    &:disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  .text-error {
+    font-size: 12px;
+    line-height: 16px;
+    color: $red;
+    text-align: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+    padding: 2px 15px;
+
+    .input-error & {
+      display: block;
+    }
+
+    &.captcha-error-message {
+      padding: 4px 15px;
+      background: none;
+      border-radius: 0;
+    }
+  }
+
+  .input-error {
+    .text-error {
+      opacity: 1;
+    }
+  }
+
+  .captcha-error-message {
+    font-size: 12px;
+    line-height: 16px;
+    color: $red;
+    text-align: left;
+    padding: 2px 0;
+  }
+
+  .g-recaptcha {
+    > div {
+      width: 100% !important;
+    }
+
+    &.has-error {
+      border: 1px solid $red;
+    }
+  }
+}

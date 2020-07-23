@@ -31,6 +31,12 @@
 <!-- Get search form -->
 <?php get_search_form() ?>
 
+<!-- Breadcrumbs -->
+<div class="breadcrumbs">
+  <?php if(function_exists('bcn_display')) {
+  bcn_display();}?>
+</div>
+
 <!-- Trim the content -->
 <?php echo wp_trim_words( get_the_content(), 150, ' [...]' ); ?>
 
@@ -140,3 +146,10 @@
           </div>
       </div>
   <?php endwhile; ?>
+
+  <!-- To implement comment forms -->
+  <?php 
+	if ( comments_open() || get_comments_number() ) :
+		comments_template();
+	endif;
+ ?>

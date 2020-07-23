@@ -5,7 +5,7 @@
   <div class="content">
     <p><?php _e( 'माफ गर्नुहोला, तपाईले खोजि गर्नु भएको कुरा भेटिएन!', 'government-school' ) ?></p>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-10">
         <?php get_search_form() ?>
       </div>
     </div>

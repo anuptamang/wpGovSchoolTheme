@@ -1,6 +1,10 @@
 <?php get_header() ?>
 <div class="base-section">
   <div class="container py-10">
+   <div class="breadcrumbs">
+     <?php if(function_exists('bcn_display')) {
+      bcn_display();}?>
+   </div>
     <?php if ( have_posts() ) : ?>
      <?php while ( have_posts() ) : the_post() ?>
       <?php get_template_part( 'blocks/content', get_post_type() ) ?>

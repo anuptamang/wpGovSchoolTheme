@@ -16,7 +16,7 @@ function base_scripts_styles() {
 	wp_localize_script( 'base-script', 'pathInfo', $path_info );
 
 	// Add bootstrap styles
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array() );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array() );
 
 	// Loads our main stylesheet.
 	wp_enqueue_style( 'base-style', get_stylesheet_uri(), array() );

@@ -29,7 +29,6 @@ include( get_template_directory() . '/inc/menus.php' );
 // Theme css & js
 include( get_template_directory() . '/inc/scripts.php' );
 
-
 // Activate WordPress Maintenance Mode
 function wp_maintenance_mode() {
     if (!current_user_can('edit_themes') || !is_user_logged_in()) {
@@ -37,4 +36,29 @@ function wp_maintenance_mode() {
         wp_die();
     }
 }
-add_action('get_header', 'wp_maintenance_mode');
+// add_action('get_header', 'wp_maintenance_mode');
+
+/*
+ * Set post views count using post meta
+ */
+function setPostViews($postID) {
+    $countKey = 'post_views_count';
+    $count = get_post_meta($postID, $countKey, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $countKey);
+        add_post_meta($postID, $countKey, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $countKey, $count);
+    }
+}
+
+/*
+ * Get post views count using post meta
+ */
+function getPostViews($postID) {
+    $countKey = 'post_views_count';
+    $count = get_post_meta($postID, $countKey, true);
+    return $count;
+}

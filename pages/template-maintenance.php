@@ -22,7 +22,7 @@ Template Name: Template Maintenance
   <?php wp_head() ?>
 </head>
 <body>
-  <div class="site-construction">
+  <div class="site-construction has-bg-watermark" <?php echo (($image = get_field('bg_watermark_maintainence', 'options')) ? 'style="background-image: url('.$image.')"' : '') ?>>
     <div class="construction-wrapper">
       <a href="#" class="construction-logo-holder">
           <div class="img-logo">
@@ -39,7 +39,6 @@ Template Name: Template Maintenance
                       <?php endif ?></address>
           </div>
         </a>
-        <h1><?php _e('निर्माण कार्य जारी छ !','base') ?></h1>
         <div class="loader">
           <div class="loader__bar"></div>
           <div class="loader__bar"></div>
@@ -48,10 +47,11 @@ Template Name: Template Maintenance
           <div class="loader__bar"></div>
           <div class="loader__ball"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" enable-background="new 0 0 64 64"><circle cx="32" cy="32" r="30" fill="#ffdd67"/><g fill="#664e27"><circle cx="20.5" cy="24.6" r="5"/><circle cx="43.5" cy="24.6" r="5"/><path d="m48.1 37c-4.3 6.1-9.5 7.6-16.1 7.6s-11.8-1.5-16.1-7.6c-.6-.8-2.2-.3-1.8.9 2.3 8 10 12.7 18 12.7s15.7-4.7 18-12.7c.2-1.2-1.4-1.7-2-.9"/></g></svg></div>
         </div>
-  
-     <div class="site-developer pt-5 font-weight-bold text-white d-flex justify-content-center align-items-center">
-        <?php _e('Designed &
-        Developed By:', 'base') ?> <a class="text-white" href="https://anuptamang.com.np" target="_blank">
+        <p class="m-0 mb-2 copyright text-white">&copy; <?php echo date( 'Y' )  ?> <?php _e('सर्बाधिकार', 'government-school') ?> <a href="<?php echo home_url() ?>" class="text-white"><?php echo get_bloginfo('title') ?></a><?php _e('मा
+                निहित।', 'government-school') ?></p>
+     <div class="site-developer font-weight-bold text-white d-md-flex justify-content-center align-items-center">
+        <div class="text-title mb-1"><?php _e('Designed, Developed & Maintained By:', 'base') ?> </div>
+        <a class="text-white" href="https://anuptamang.com.np" target="_blank">
         <span class="img">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 58.6 55" xml:space="preserve">
               <style>

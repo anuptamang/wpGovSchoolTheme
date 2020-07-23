@@ -1,8 +1,8 @@
         </main>
-        <footer id="footer" class="bg-primary">
+        <footer id="footer" class="bg-primary has-bg-watermark" <?php echo (($image = get_field('bg_watermark_maintainence', 'options')) ? 'style="background-image: url('.$image.')"' : '') ?>>
       <div class="container py-8 py-lg-12 text-center text-md-left">
         <div class="row">
-          <div class="col-md-4 mb-4 mb-md-0">
+          <div class="col-md-4 mb-4 mb-md-0 has-anim fadeInLeft">
             <div class="img-logo">
               <a href="<?php echo home_url() ?>" class="img">
                 <?php if( $logo = get_field('logo', 'options') ) : ?>
@@ -18,7 +18,7 @@
             </address>
             
           </div>
-          <div class="col-md-4 mb-4 mb-md-0">
+          <div class="col-md-4 mb-4 mb-md-0 has-anim fadeInUp">
             <h4 class="text-white mb-4"><?php _e('उपयोगी लिंकहरु', 'government-school') ?></h4>
             <?php if($footer_links = get_field('footer_links', 'options')): ?>
                 <ul class="list-unstyled nav-footer row">
@@ -34,11 +34,11 @@
             <?php endif ?>
             <div class="fb-share-plugin overflow-hidden">
               <?php if( $facebook_widget = get_field('facebook_widget', 'options') ) : ?>
-                <?php echo do_shortcode($facebook_widget) ?>
+               <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F<?php echo $facebook_widget ?>%2F&tabs=timeline&width=340&height=320&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="340" height="350" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
               <?php endif ?>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 has-anim fadeInRight">
             <div class="pl-xl-10">
               <h4 class="text-white mb-4"><?php _e('सम्पर्क गर्नुहोस', 'government-school') ?></h4>
               <?php if( $contact_form = get_field('contact_form', 'options') ) : ?>
@@ -56,9 +56,8 @@
                 निहित।', 'government-school') ?></p>
             </div>
             <div class="col-lg-6">
-              <div class="site-developer font-weight-bold text-white d-flex justify-content-center justify-content-lg-end align-items-center">
-                  <?php _e('Designed &
-                  Developed By:', 'government-school') ?> <a class="text-white" href="https://anuptamang.com.np" target="_blank">
+              <div class="site-developer font-weight-bold text-white d-md-flex justify-content-center justify-content-lg-end align-items-center">
+                  <div class="text-title mb-1 mb-md-0"><?php _e('Designed, Developed & Maintained By:', 'base') ?> </div><a class="text-white" href="https://anuptamang.com.np" target="_blank">
                   <span class="img">
                       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 58.6 55" xml:space="preserve">
                         <style>
@@ -87,6 +86,7 @@
             </div>
           </div>
         </div>
+        <a href="#wrapper" class="btn btn-primary bg-danger btn-bg-animate btn-sm no-after-icon btn-top"><span class="icon-arrow-up"></span></a>
       </div>
     </footer>
       <?php wp_footer() ?>

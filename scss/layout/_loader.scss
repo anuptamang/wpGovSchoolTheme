@@ -47,9 +47,10 @@
     content: 'लोड हुँदैछ...';
     position: absolute;
     top: 100%;
+    left: 50%;
     margin-top: 15px;
-    left: 0;
-    right: 0;
+    width: 200px;
+    transform: translateX(-50%);
     text-align: center;
     color: $white;
     font-size: 16px;
@@ -58,7 +59,7 @@
     white-space: nowrap;
 
     .site-construction & {
-      display: none;
+      content: 'निर्माण कार्य जारी छ !';
     }
   }
 

@@ -14,7 +14,7 @@
   ?>
   <div class="slide has-bg has-overlay" style="background-image: url('<?php echo $image[0] ?>');">
     <div class="container">
-      <div class="caption">
+      <div class="caption has-anim fadeInUp">
         <h1 class="text-white"><?php the_title(); ?></h1>
         <a href="<?php echo get_post_permalink($post->ID) ?>" class="btn btn-primary btn-white"><?php _e('थप पढ्नुहोस','government-school') ?></a>
       </div>

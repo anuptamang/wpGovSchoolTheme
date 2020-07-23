@@ -14,16 +14,53 @@
     max-height: 549px !important;
   }
 
-  #sidebar & {
-    max-height: 413px !important;
+  .scrollable-fixed-height & {
+    max-height: none !important;
+    height: 369px !important;
+    position: relative;
 
     @include media('>=tablet') {
-        max-height: 413px !important;
+      max-height: none !important;
+      height: 618px !important;
+    }
+
+    @include media('>=desktop') {
+      max-height: none !important;
+      height: 500px !important;
+    }
+
+    &:before {
+      content:'';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 70px;
+      background:$fade-blue;
+      z-index: 1;
+
+      @include media('>=tablet') {
+        width: 100px;
+      }
+    }
+  }
+
+  #sidebar & {
+    max-height: 370px !important;
+
+    @include media('>=tablet') {
+        max-height: 370px !important;
       }
 
       @include media('>=desktop') {
-        max-height: 413px !important;
+        max-height: 370px !important;
       }
+  }
+
+  .news-notices & {
+    @include media('>=desktop') {
+        max-height: 870px !important;
+    }
   }
 }
 

@@ -1,4 +1,4 @@
-  <section class="intro-banner has-bg has-overlay blue" <?php if (has_post_thumbnail( $post->ID ) ) {
+  <section class="page-intro has-bg has-overlay blue" <?php if (has_post_thumbnail( $post->ID ) ) {
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
         echo 'style="background-image: url('.$image[0].')"';        
       } else {

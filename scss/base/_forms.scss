@@ -17,23 +17,22 @@ textarea {
 	-webkit-appearance: none;
 	-webkit-border-radius: 0;
 	box-sizing: border-box;
-	border: 1px solid $black;
+	border: 1px solid $blue;
 	padding: 4px 15px;
 	display: block;
 	width: 100%;
 	outline: none !important;
-	color: $light-black;
+	color: $blue;
+	background:#d5e9fa !important;
+	border-radius: 10px;
+	color: #313131 !important;
 
 	// &:hover {
 
 	// }
 
-	&:focus {
-		border-color: $black;
-	}
-
 	@include placeholder {
-		color: $light-black;
+		color: #313131 !important;
 	}
 }
 

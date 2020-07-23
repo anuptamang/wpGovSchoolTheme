@@ -3,6 +3,10 @@
 <?php get_header() ?> 
   <?php get_template_part('blocks/intro-banner'); ?>
   <div class="container py-10">
+    <div class="breadcrumbs">
+  <?php if(function_exists('bcn_display')) {
+  bcn_display();}?>
+</div>
     <div class="row justify-content-center">
       <div class="col-md-8">
         <?php if ( have_posts() ) : ?>
